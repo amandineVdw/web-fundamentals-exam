@@ -1,0 +1,88 @@
+#post .components .prevnext {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  flex: 1;
+  width: 100%;
+}
+
+.prevnext a {
+  display: flex;
+  text-align: center;
+  color: var(--body-color);
+  padding: 1rem 0.5rem;
+  background: var(--bg-2);
+  background-repeat: no-repeat;
+  border: 1px solid var(--table-border);
+  flex: 1;
+  align-items: center;
+  gap: 5px;
+}
+
+.prevnext a span {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: .1rem;
+  align-self: start;
+  font-size: 14px;
+  /* font-family: 'PT Sans Narrow'; */
+  /* font-size: 15px; */
+}
+
+.prevnext a:hover {
+  background-color: var(--table-border);
+}
+
+.prevnext a span:before {
+  display: block;
+ 
+  color: var(--link-color);
+}
+
+.prevnext a::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  transition: transform .2s ease-in-out;
+}
+
+.prevnext a:nth-child(1) span:before {
+  content: "Post anterior";
+}
+
+.prevnext a:nth-child(1)::before {
+  background: url(../../img/ang-r.svg) no-repeat center / contain;
+  transform: scaleX(-1);
+}
+
+.prevnext a:nth-child(1):hover::before{
+  transform: scaleX(-1) translate3d(3px, 0, 0);
+}
+
+.prevnext a:nth-child(2) span:before {
+  content: "Próximo post";
+}
+
+.prevnext a:nth-child(2)::before {
+  background: url(../../img/ang-r.svg) no-repeat center / contain;
+  order: 2;
+}
+
+.prevnext a:nth-child(2):hover::before{
+  transform: translate3d(3px, 0, 0);
+}
+
+@media only screen and (max-device-width : 743px), only screen and (max-width : 743px) {
+  #post .components .prevnext {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+/* 
+@media only screen and (min-width : 601px) and (max-width : 1024px), only screen and (min-device-width : 601px) and (max-device-width : 1024px) {
+  .prevnext {display:none;}
+} */
