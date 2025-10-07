@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,10 @@
 <meta name="description" content="Explorez l'évolution du Web à travers une frise interactive et ludique. Découvrez les grandes étapes du Web 1.0 à l'ère de l'IA, avec illustrations, résumés audio et vidéos captivantes.">
 <meta name="keywords" content="histoire du web, évolution internet, web 1.0, web 2.0, web 3.0, intelligence artificielle, frise interactive, résumé vidéo, technologie, innovation numérique, Web Time Capsule">
 <meta name="author" content="Web Time Capsule">
-<!-- Tailwind CSS via CDN (production-ready mais non optimisé) -->
+<!-- Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Feather Icons -->
 <script src="https://unpkg.com/feather-icons"></script>
-<!-- Vanta.js -->
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
 <!-- Three.js (required for Vanta.js) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <!-- Vanta.js -->
@@ -27,10 +25,23 @@
 <body class="bg-primary min-h-screen font-sans">
 
   <!-- Vanta background -->
-  <div id="vanta-bg" class="absolute inset-0 z-0"></div>
+  <div id="vanta-bg"></div>
 
   <!-- Navbar -->
   <div id="navbar-placeholder"></div>
+
+  <!-- Modal Video (placé ici pour être au-dessus de tout) -->
+  <div id="video-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[9999]">
+    <div class="bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4 relative">
+      <button id="close-modal" class="absolute top-4 right-4 z-10 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition-all">
+        &times;
+      </button>
+      <video id="modal-video" controls class="w-full h-auto">
+        <source src="" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </div>
 
   <!-- Sections -->
   <div id="hero-section-placeholder"></div>
@@ -50,6 +61,5 @@
   <script src="assets/js/timeline.js"></script>
   <script src="assets/js/urls.js"></script>
   <script src="assets/js/modal-video.js"></script>
-  <!-- <script src="assets/js/navbar.js"></script> -->
 </body>
 </html>
