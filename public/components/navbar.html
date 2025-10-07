@@ -1,26 +1,47 @@
-    <!-- Navbar -->
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i data-feather="globe" class="h-8 w-8 text-lollipop-500"></i>
-                        <span class="ml-2 text-xl font-bold text-lollipop-700">Web Time Capsule</span>
-                    </div>
-                </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#timeline" class="text-lollipop-700 hover:text-lollipop-500 px-3 py-2 rounded-md text-sm font-medium">Timeline</a>
-                    <a href="#url" class="text-lollipop-700 hover:text-lollipop-500 px-3 py-2 rounded-md text-sm font-medium">URLs</a>
-                    <a href="#domains" class="text-lollipop-700 hover:text-lollipop-500 px-3 py-2 rounded-md text-sm font-medium">Domains</a>
-                    <a href="#standards" class="text-lollipop-700 hover:text-lollipop-500 px-3 py-2 rounded-md text-sm font-medium">Standards</a>
-                    <a href="#security" class="text-lollipop-700 hover:text-lollipop-500 px-3 py-2 rounded-md text-sm font-medium">Security</a>
-                </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-lollipop-500 hover:text-lollipop-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
+<!-- ===========================
+     NAVBAR - Web Time Capsule
+     Style Glow & Good Vibes
+=========================== -->
+<nav class="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      
+      <!-- === LOGO SECTION === -->
+      <div class="flex items-center">
+        <!-- Icône du logo (petit globe) -->
+        <i data-feather="globe" class="logo-icon h-8 w-8"></i>
+        <!-- Texte du logo avec effet dégradé -->
+        <span class="logo-text ml-2 text-xl">Web Time Capsule</span>
+      </div>
+
+      <!-- === NAVIGATION LIENS === -->
+      <div class="hidden md:flex md:items-center md:space-x-4">
+        <!-- Liens de navigation classiques -->
+        <a href="#timeline">Timeline</a>
+        <a href="#url">URLs</a>
+        <a href="#domains">Domains</a>
+        <a href="#standards">Standards</a>
+        <a href="#security">Security</a>
+        <!-- Bouton spécial “Résumé vidéo” -->
+        <a href="#résumé-vidéo" class="btn-glow" data-video="/public/assets/video/Le_Plan_Invisible_du_Web.mp4">Résumé vidéo</a>
+      </div>
+      <!-- MODALE VIDEO (à placer ici, hors navbar) -->
+      <div id="video-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 p-4">
+        <div class="bg-white rounded-lg overflow-hidden max-w-3xl w-full relative flex flex-col">
+            <button id="close-modal" class="absolute top-2 right-2 text-xl font-bold text-gray-700 hover:text-black">&times;</button>
+            <video id="modal-video" controls autoplay class="w-full h-auto max-h-[80vh]">
+                <source src="" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
         </div>
-    </nav>
-    
+      </div>              <!-- === MENU MOBILE === -->
+      <!-- Visible uniquement sur petit écran -->
+      <div class="md:hidden">
+        <button type="button" class="p-2 rounded-md focus:outline-none">
+          <!-- Icône du burger (via Feather Icons) -->
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

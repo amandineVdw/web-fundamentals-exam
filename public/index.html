@@ -4,16 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Web Time Capsule</title>
-<!-- Tailwind CSS -->
+<meta name="description" content="Explorez l'évolution du Web à travers une frise interactive et ludique. Découvrez les grandes étapes du Web 1.0 à l'ère de l'IA, avec illustrations, résumés audio et vidéos captivantes.">
+<meta name="keywords" content="histoire du web, évolution internet, web 1.0, web 2.0, web 3.0, intelligence artificielle, frise interactive, résumé vidéo, technologie, innovation numérique, Web Time Capsule">
+<meta name="author" content="Web Time Capsule">
+<!-- Tailwind CSS via CDN (production-ready mais non optimisé) -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Feather Icons -->
 <script src="https://unpkg.com/feather-icons"></script>
 <!-- Vanta.js -->
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
-<link rel="icon" href="assets/favicon.ico">
+<!-- Three.js (required for Vanta.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Vanta.js -->
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
 <link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body class="bg-primary min-h-screen font-sans">
 
@@ -36,9 +45,11 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/vanta-init.js"></script>
   <script src="assets/js/load-components.js"></script>
   <script src="assets/js/timeline.js"></script>
   <script src="assets/js/urls.js"></script>
+  <script src="assets/js/modal-video.js"></script>
+  <!-- <script src="assets/js/navbar.js"></script> -->
 </body>
 </html>

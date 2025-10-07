@@ -1,30 +1,20 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+tailwind.config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#EEF5FD',
-          light: '#F5F9FF',
-          dark: '#DCE8F8'
-        },
-        secondary: {
-          DEFAULT: '#A8E6CF',
-          light: '#CFF6E4',
-          dark: '#7FCFAA'
-        },
-        accent: {
-          DEFAULT: '#4A90E2',
-          light: '#78B0F5',
-          dark: '#2D6FCC'
-        },
-        text: '#333333'
+        corail: '#FF6B4A',
+        violet: '#9B6DFF',
+        jaune: '#FFD93D',
+        fond: '#FFF8F0',
+        gris: '#2E2E2E',
       },
       fontFamily: {
         heading: ['Poppins', 'sans-serif'],
-        body: ['Lato', 'sans-serif']
-      }
+        body: ['Lato', 'sans-serif'],
+      },
+      boxShadow: {
+        glow: '0 0 20px rgba(255, 217, 61, 0.3)',
+      },
     }
-  },
-  plugins: []
+  }
 }

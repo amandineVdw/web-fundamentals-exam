@@ -1,142 +1,131 @@
-/* main.css */
-
-/* Import Tailwind base, components et utilities */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ===========================
-   Palette GoodVibes
+   🎨 PALETTE GOODVIBES CORAIL
+   (tons chauds + violets lumineux)
 =========================== */
 :root {
-  --gv-bg: #EEF5FD;        /* Fond général */
-  --gv-secondary: #A8E6C9; /* Couleur secondaire */
-  --gv-accent: #4A90E2;    /* Accent (boutons, liens) */
-  --gv-text: #333333;      /* Texte principal */
-  --gv-card-bg: #FFFFFF;   /* Fond des cartes */
-  --gv-card-shadow: rgba(0,0,0,0.08); /* Ombre douce */
+  --corail: #ff6f61;       /* orange corail doux */
+  --violet: #6c63ff;       /* violet moderne et vibrant */
+  --jaune: #ffd93d;        /* jaune lumière pour les effets glow */
+  --bleu-fonce: #1a1a2e;   /* pour le footer foncé */
+  --rose-clair: #ffecec;   /* pour des touches pastel */
+  --blanc: #ffffff;        /* blanc pur */
+  --gris: #333333;         /* couleur texte standard */
+  --fond: rgba(255, 255, 255, 0.75); /* fond navbar translucide */
+}
+
+
+/* ===========================
+   🧭 NAVBAR GLOW EDITION
+=========================== */
+.navbar {
+  background: var(--fond);                       /* fond semi-transparent */
+  position: sticky;                              /* reste collée en haut */
+  top: 0;
+  width: 100%;
+  z-index: 1000;                                 /* toujours au-dessus du contenu */
+  backdrop-filter: blur(10px);                   /* effet flou type “verre dépoli” */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);       /* ombre douce */
+  padding: 0.5rem 0;                             /* espace vertical */
+}
+
+/* === Logo (icône globe) === */
+.navbar .logo-icon {
+  color: var(--corail);
+  transition: all 0.3s ease;
+}
+.navbar .logo-icon:hover {
+  color: var(--violet);
+  transform: rotate(10deg) scale(1.1); /* petit effet ludique au survol */
+}
+
+/* === Texte du logo avec dégradé === */
+.navbar .logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--corail), var(--violet));
+  -webkit-background-clip: text;   /* permet de remplir le texte avec le dégradé */
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+.navbar .logo-text:hover {
+  transform: scale(1.05);          /* léger zoom au survol */
+}
+
+/* === Liens du menu === */
+.navbar a {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--gris);              /* texte noir/gris par défaut */
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--corail);            /* survol = corail lumineux */
+  transform: scale(1.05);
+}
+
+/* === Bouton Résumé Vidéo === */
+.btn-glow {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  background: linear-gradient(to right, var(--corail), var(--violet));
+  color: var(--blanc);             /* texte blanc constant */
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 217, 61, 0.5);  /* effet glow doux */
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 20px var(--jaune); /* effet lumière + intense au hover */
+  transform: scale(1.05);
+  color: var(--blanc); /* ✅ garde la couleur blanche même au hover */
+}
+
+/* === Icône du menu mobile === */
+.navbar button {
+  color: var(--corail);
+  transition: color 0.3s ease;
+}
+.navbar button:hover {
+  color: var(--violet);
 }
 
 /* ===========================
-   Styles globaux
+   🌈 GLOBAL STYLES
 =========================== */
 body {
-  font-family: 'Lato', sans-serif;
-  color: var(--gv-text);
-  background-color: var(--gv-bg);
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Titres */
-h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: var(--gv-text);
-  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff8f9 0%, #f0f2ff 100%); /* fond clair pastel */
+  color: var(--gris);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* Paragraphes */
-p, span, li {
-  color: var(--gv-text);
+/* ===========================
+   🌓 FOOTER
+=========================== */
+footer {
+  background-color: var(--bleu-fonce); /* fond foncé */
+  color: var(--blanc);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
 }
 
-/* Liens */
-a {
-  color: var(--gv-accent);
+footer a {
+  color: var(--jaune);
   text-decoration: none;
-  transition: color 0.3s;
 }
-a:hover {
-  color: var(--gv-secondary);
+
+footer a:hover {
   text-decoration: underline;
-}
-
-/* Boutons */
-button, .btn {
-  @apply px-4 py-2 rounded font-bold transition-colors duration-300;
-  background-color: var(--gv-accent);
-  color: white;
-  cursor: pointer;
-}
-button:hover, .btn:hover {
-  background-color: #3d7acc; /* version hover */
-}
-
-/* Sections */
-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* Containers */
-.container, .max-w-7xl {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-/* Cartes */
-.card, .bg-white {
-  background-color: var(--gv-card-bg);
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px var(--gv-card-shadow);
-  padding: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover, .bg-white:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px var(--gv-card-shadow);
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, var(--gv-bg), var(--gv-secondary));
-  color: var(--gv-text);
-}
-
-/* Timeline Section */
-.timeline-point {
-  @apply relative z-10 -mt-3 px-4 py-2 rounded-full bg-white border-2 border-blue-400 text-blue-600 font-bold transition hover:bg-blue-100;
-}
-
-/* URL Section Cards */
-.url-card {
-  @apply flex items-start p-6 rounded-xl shadow-lg bg-gradient-to-r from-lollipop-100 to-mint-100 transition-transform duration-300;
-}
-.url-card:hover {
-  @apply -translate-y-1 shadow-xl;
-}
-
-/* Quiz Section */
-#quiz-section {
-  background-color: var(--gv-secondary);
-  color: var(--gv-text);
-}
-#quiz-section h2, #quiz-section h3 {
-  color: var(--gv-text);
-}
-#quiz-section .card {
-  background-color: var(--gv-card-bg);
-}
-
-/* Illustration */
-img {
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--gv-card-shadow);
-}
-
-/* Tables et code */
-code {
-  font-family: 'Fira Code', monospace;
-  background-color: #f3f4f6;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
-}
-
-/* Misc transitions pour hover */
-.hover-transition {
-  transition: all 0.3s ease-in-out;
-}
-.hover-transition:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px var(--gv-card-shadow);
 }
