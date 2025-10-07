@@ -1,6 +1,9 @@
-// Vanta.js init
-// Wait for DOM and Vanta to be ready
+// vanta-init.js - Initialisation de l'effet Vanta.js Globe
+
+// Attendre que le DOM et Vanta soient prêts
 window.addEventListener('DOMContentLoaded', function() {
+  
+  // Vérifier que Vanta est chargé
   if (typeof VANTA !== 'undefined') {
     try {
       VANTA.GLOBE({
@@ -12,29 +15,42 @@ window.addEventListener('DOMContentLoaded', function() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0xff5eaf,
-        backgroundColor: 0xfff0f5
+        color: 0xff5eaf,        // Rose/corail
+        backgroundColor: 0xfff0f5  // Fond rose très clair
       });
+      console.log('✅ Vanta.js Globe activé !');
     } catch (error) {
-      console.error('Vanta initialization error:', error);
+      console.error('❌ Erreur initialisation Vanta.js:', error);
     }
   } else {
-    console.error('VANTA is not defined. Make sure Vanta.js is loaded.');
+    console.warn('⚠️ Vanta.js n\'est pas chargé. Vérifiez le CDN.');
   }
-});
 
-// Feather icons
-feather.replace();
+  // Activer les icônes Feather
+  if (typeof feather !== 'undefined') {
+    feather.replace();
+    console.log('✅ Feather Icons activés !');
+  }
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+  // Smooth scroll pour tous les liens d'ancre
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      
+      // Éviter les ancres vides
+      if (targetId === '#' || targetId === '#résumé-vidéo') {
+        return;
+      }
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
+
 });

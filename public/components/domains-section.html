@@ -1,107 +1,297 @@
-    <!-- Domains Section -->
-    <section id="domains" class="py-12 bg-gradient-to-b from-mint-50 to-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-3xl font-extrabold text-lollipop-900 sm:text-4xl">
-                    Domain Names
-                </h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl text-lollipop-700 sm:mt-4">
-                    How the web finds its way to your favorite sites
-                </p>
-            </div>
+<!-- Section Noms de Domaine & DNS - Enrichie -->
+<section id="domains" class="py-12 bg-gradient-to-b from-mint-50 to-sky-50 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold gradient-title sm:text-4xl">
+        Noms de Domaine & DNS 🌐
+      </h2>
+      <p class="mt-3 max-w-2xl mx-auto text-xl text-lollipop-700 sm:mt-4">
+        Comment le web trouve le chemin vers vos sites préférés
+      </p>
+    </div>
 
-            <div class="mt-12">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-lollipop-800 mb-4">Domain Lifecycle</h3>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 bg-mint-100 rounded-full p-2">
-                                    <i data-feather="plus-circle" class="h-5 w-5 text-mint-600"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="text-lg font-medium text-lollipop-800">Available</h4>
-                                    <p class="mt-1 text-sm text-lollipop-700">
-                                        Domain is free to register by anyone.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 bg-lollipop-100 rounded-full p-2">
-                                    <i data-feather="check-circle" class="h-5 w-5 text-lollipop-600"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="text-lg font-medium text-lollipop-800">Active</h4>
-                                    <p class="mt-1 text-sm text-lollipop-700">
-                                        Registered and in use with DNS configured.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 bg-yellow-100 rounded-full p-2">
-                                    <i data-feather="clock" class="h-5 w-5 text-yellow-600"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="text-lg font-medium text-lollipop-800">Expired</h4>
-                                    <p class="mt-1 text-sm text-lollipop-700">
-                                        Grace period before becoming available again.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 bg-red-100 rounded-full p-2">
-                                    <i data-feather="x-circle" class="h-5 w-5 text-red-600"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="text-lg font-medium text-lollipop-800">Redemption</h4>
-                                    <p class="mt-1 text-sm text-lollipop-700">
-                                        Final chance to renew at higher cost.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="bg-white p-8 rounded-xl shadow-lg">
-                            <h3 class="text-2xl font-bold text-lollipop-800 mb-4">DNS Explained</h3>
-                            <p class="text-lollipop-700 mb-6">
-                                The Domain Name System (DNS) is like the phonebook of the internet, translating human-readable domain names to machine-readable IP addresses.
-                            </p>
-                            
-                            <div class="relative">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-full h-full border-2 border-dashed border-lollipop-200 rounded-full"></div>
-                                </div>
-                                <div class="relative flex justify-center">
-                                    <div class="bg-mint-100 p-4 rounded-full shadow-lg">
-                                        <i data-feather="globe" class="h-8 w-8 text-mint-600"></i>
-                                    </div>
-                                </div>
-                                <div class="relative flex justify-between mt-6">
-                                    <div class="bg-lollipop-100 p-3 rounded-full shadow-lg">
-                                        <i data-feather="search" class="h-6 w-6 text-lollipop-600"></i>
-                                    </div>
-                                    <div class="bg-sky-100 p-3 rounded-full shadow-lg">
-                                        <i data-feather="server" class="h-6 w-6 text-sky-600"></i>
-                                    </div>
-                                </div>
-                                <div class="relative flex justify-between mt-12">
-                                    <div class="bg-purple-100 p-3 rounded-full shadow-lg">
-                                        <i data-feather="database" class="h-6 w-6 text-purple-600"></i>
-                                    </div>
-                                    <div class="bg-yellow-100 p-3 rounded-full shadow-lg">
-                                        <i data-feather="hard-drive" class="h-6 w-6 text-yellow-600"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Principe des noms de domaine -->
+    <div class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+      <h3 class="text-2xl font-bold gradient-title mb-6 text-center">📌 Principe & Utilité</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-lg text-gray-700 mb-4">
+            Un <strong>nom de domaine</strong> est l'adresse lisible par les humains pour accéder à un site web (ex: <span class="font-mono text-purple-600">monsite.fr</span>).
+          </p>
+          <p class="text-gray-700 mb-4">
+            Derrière chaque nom de domaine se cache une <strong>adresse IP</strong> (ex: 192.168.1.1) que les ordinateurs comprennent.
+          </p>
+          <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg p-4">
+            <p class="text-sm font-semibold text-purple-800">
+              💡 Analogie : Le nom de domaine est comme un nom de contact dans votre téléphone, tandis que l'IP est le numéro de téléphone réel.
+            </p>
+          </div>
         </div>
-    </section>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 shadow-md">
+          <div class="text-center mb-4">
+            <i data-feather="user" class="h-12 w-12 text-blue-600 mx-auto mb-2"></i>
+            <p class="font-bold text-lg">Humain saisit</p>
+            <p class="font-mono text-purple-600 text-xl">monsite.fr</p>
+          </div>
+          <div class="flex justify-center my-4">
+            <i data-feather="arrow-down" class="h-8 w-8 text-gray-400"></i>
+          </div>
+          <div class="text-center">
+            <i data-feather="server" class="h-12 w-12 text-green-600 mx-auto mb-2"></i>
+            <p class="font-bold text-lg">Ordinateur trouve</p>
+            <p class="font-mono text-green-600 text-xl">192.0.2.1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Réservation & Acteurs -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold gradient-title mb-8 text-center">🏢 Réservation & Acteurs</h3>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <i data-feather="shopping-cart" class="h-8 w-8 text-blue-600"></i>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-800 mb-3">Registrars</h4>
+          <p class="text-sm text-gray-600 text-center mb-3">
+            Ce sont les entreprises autorisées à vendre des noms de domaine.
+          </p>
+          <div class="bg-gray-50 rounded-lg p-3">
+            <p class="text-xs font-semibold text-gray-700 mb-1">Exemples :</p>
+            <ul class="text-xs text-gray-600 space-y-1">
+              <li>• OVH (France)</li>
+              <li>• GoDaddy</li>
+              <li>• Namecheap</li>
+              <li>• Gandi</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <i data-feather="shield" class="h-8 w-8 text-purple-600"></i>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-800 mb-3">ICANN</h4>
+          <p class="text-sm text-gray-600 text-center mb-3">
+            Organisation mondiale qui régule l'attribution des noms de domaine.
+          </p>
+          <div class="bg-gray-50 rounded-lg p-3">
+            <p class="text-xs font-semibold text-gray-700 mb-1">Rôles :</p>
+            <ul class="text-xs text-gray-600 space-y-1">
+              <li>• Coordination mondiale</li>
+              <li>• Gestion des extensions</li>
+              <li>• Accréditation des registrars</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <i data-feather="database" class="h-8 w-8 text-green-600"></i>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-800 mb-3">Registries</h4>
+          <p class="text-sm text-gray-600 text-center mb-3">
+            Organisations gérant les extensions (.com, .fr, .org).
+          </p>
+          <div class="bg-gray-50 rounded-lg p-3">
+            <p class="text-xs font-semibold text-gray-700 mb-1">Exemples :</p>
+            <ul class="text-xs text-gray-600 space-y-1">
+              <li>• Verisign (.com, .net)</li>
+              <li>• AFNIC (.fr)</li>
+              <li>• PIR (.org)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Cycle de vie d'un domaine -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold gradient-title mb-8 text-center">♻️ Cycle de Vie d'un Domaine</h3>
+      
+      <div class="bg-white rounded-xl p-8 shadow-lg">
+        <div class="relative">
+          <!-- Ligne de progression -->
+          <div class="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-green-400 via-yellow-400 to-red-400"></div>
+          
+          <div class="relative grid grid-cols-2 md:grid-cols-5 gap-4">
+            
+            <!-- Disponible -->
+            <div class="text-center">
+              <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 border-4 border-white shadow-lg">
+                <i data-feather="plus-circle" class="h-8 w-8 text-green-600"></i>
+              </div>
+              <h4 class="font-bold text-green-800 mb-1">Disponible</h4>
+              <p class="text-xs text-gray-600">Libre à l'enregistrement</p>
+            </div>
+
+            <!-- Enregistré -->
+            <div class="text-center">
+              <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 border-4 border-white shadow-lg">
+                <i data-feather="check-circle" class="h-8 w-8 text-blue-600"></i>
+              </div>
+              <h4 class="font-bold text-blue-800 mb-1">Enregistré</h4>
+              <p class="text-xs text-gray-600">Actif et utilisé</p>
+            </div>
+
+            <!-- Expiré -->
+            <div class="text-center">
+              <div class="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 border-4 border-white shadow-lg">
+                <i data-feather="clock" class="h-8 w-8 text-yellow-600"></i>
+              </div>
+              <h4 class="font-bold text-yellow-800 mb-1">Expiré</h4>
+              <p class="text-xs text-gray-600">Période de grâce (30-45j)</p>
+            </div>
+
+            <!-- Rédemption -->
+            <div class="text-center">
+              <div class="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 border-4 border-white shadow-lg">
+                <i data-feather="alert-triangle" class="h-8 w-8 text-orange-600"></i>
+              </div>
+              <h4 class="font-bold text-orange-800 mb-1">Rédemption</h4>
+              <p class="text-xs text-gray-600">Récup. possible (coût élevé)</p>
+            </div>
+
+            <!-- Libéré -->
+            <div class="text-center">
+              <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 border-4 border-white shadow-lg">
+                <i data-feather="refresh-cw" class="h-8 w-8 text-red-600"></i>
+              </div>
+              <h4 class="font-bold text-red-800 mb-1">Libéré</h4>
+              <p class="text-xs text-gray-600">De nouveau disponible</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DNS Expliqué -->
+    <div>
+      <h3 class="text-2xl font-bold gradient-title mb-8 text-center">🔍 Le DNS (Domain Name System)</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Qu'est-ce que le DNS ?</h4>
+          <p class="text-gray-700 mb-4">
+            Le <strong>DNS</strong> est comme <strong>l'annuaire téléphonique d'Internet</strong>. Il traduit les noms de domaine lisibles par les humains en adresses IP compréhensibles par les machines.
+          </p>
+          
+          <div class="bg-blue-50 rounded-lg p-4 mb-4">
+            <p class="text-sm font-semibold text-blue-800 mb-2">🔄 Fonctionnement simplifié :</p>
+            <ol class="text-sm text-blue-700 space-y-2">
+              <li><strong>1.</strong> Vous tapez <span class="font-mono">exemple.com</span></li>
+              <li><strong>2.</strong> Votre ordinateur demande au DNS local</li>
+              <li><strong>3.</strong> Le DNS interroge les serveurs racine</li>
+              <li><strong>4.</strong> Puis les serveurs TLD (.com, .fr...)</li>
+              <li><strong>5.</strong> Enfin le serveur autoritaire du domaine</li>
+              <li><strong>6.</strong> L'IP est renvoyée à votre ordinateur</li>
+            </ol>
+          </div>
+
+          <div class="bg-purple-50 rounded-lg p-4">
+            <p class="text-xs text-purple-800">
+              ⚡ <strong>Temps moyen :</strong> Quelques millisecondes grâce au cache DNS !
+            </p>
+          </div>
+        </div>
+
+        <!-- Schéma visuel DNS -->
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-8 shadow-lg">
+          <h4 class="text-lg font-bold text-center text-gray-800 mb-6">Parcours d'une requête DNS</h4>
+          
+          <div class="space-y-6">
+            
+            <!-- Étape 1 : Utilisateur -->
+            <div class="flex items-center">
+              <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+              <div class="flex-1 bg-white rounded-lg p-3 shadow">
+                <div class="flex items-center">
+                  <i data-feather="user" class="h-5 w-5 text-blue-600 mr-2"></i>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-800">Utilisateur</p>
+                    <p class="text-xs text-gray-600">Tape exemple.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Étape 2 : DNS Local -->
+            <div class="flex items-center">
+              <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+              <div class="flex-1 bg-white rounded-lg p-3 shadow">
+                <div class="flex items-center">
+                  <i data-feather="monitor" class="h-5 w-5 text-purple-600 mr-2"></i>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-800">DNS Local/FAI</p>
+                    <p class="text-xs text-gray-600">Vérifie son cache</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Étape 3 : Serveur Racine -->
+            <div class="flex items-center">
+              <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+              <div class="flex-1 bg-white rounded-lg p-3 shadow">
+                <div class="flex items-center">
+                  <i data-feather="globe" class="h-5 w-5 text-green-600 mr-2"></i>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-800">Serveur Racine</p>
+                    <p class="text-xs text-gray-600">Renvoie vers TLD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Étape 4 : Serveur TLD -->
+            <div class="flex items-center">
+              <div class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+              <div class="flex-1 bg-white rounded-lg p-3 shadow">
+                <div class="flex items-center">
+                  <i data-feather="server" class="h-5 w-5 text-yellow-600 mr-2"></i>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-800">Serveur TLD (.com)</p>
+                    <p class="text-xs text-gray-600">Indique NS autoritaire</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Étape 5 : Serveur Autoritaire -->
+            <div class="flex items-center">
+              <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">5</div>
+              <div class="flex-1 bg-white rounded-lg p-3 shadow">
+                <div class="flex items-center">
+                  <i data-feather="database" class="h-5 w-5 text-red-600 mr-2"></i>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-800">Serveur Autoritaire</p>
+                    <p class="text-xs text-gray-600">Renvoie l'IP finale</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Résultat -->
+            <div class="bg-gradient-to-r from-green-400 to-blue-500 rounded-lg p-4 text-white text-center">
+              <i data-feather="check-circle" class="h-6 w-6 mx-auto mb-2"></i>
+              <p class="text-sm font-bold">IP trouvée : 192.0.2.1</p>
+              <p class="text-xs opacity-90">Connexion établie !</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

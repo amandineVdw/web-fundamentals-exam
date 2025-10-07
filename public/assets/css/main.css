@@ -3,53 +3,53 @@
    (tons chauds + violets lumineux)
 =========================== */
 :root {
-  --corail: #ff6f61;       /* orange corail doux */
-  --violet: #6c63ff;       /* violet moderne et vibrant */
-  --jaune: #ffd93d;        /* jaune lumière pour les effets glow */
-  --bleu-fonce: #1a1a2e;   /* pour le footer foncé */
-  --rose-clair: #ffecec;   /* pour des touches pastel */
-  --blanc: #ffffff;        /* blanc pur */
-  --gris: #333333;         /* couleur texte standard */
-  --fond: rgba(255, 255, 255, 0.75); /* fond navbar translucide */
+  --corail: #ff6f61;
+  --violet: #6c63ff;
+  --jaune: #ffd93d;
+  --bleu-fonce: #1a1a2e;
+  --rose-clair: #ffecec;
+  --blanc: #ffffff;
+  --gris: #333333;
+  --fond: rgba(255, 255, 255, 0.85);
 }
-
 
 /* ===========================
-   🧭 NAVBAR GLOW EDITION
+   🧭 NAVBAR STICKY & GLOW
 =========================== */
 .navbar {
-  background: var(--fond);                       /* fond semi-transparent */
-  position: sticky;                              /* reste collée en haut */
+  background: var(--fond);
+  position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000;                                 /* toujours au-dessus du contenu */
-  backdrop-filter: blur(10px);                   /* effet flou type “verre dépoli” */
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);       /* ombre douce */
-  padding: 0.5rem 0;                             /* espace vertical */
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem 0;
 }
 
-/* === Logo (icône globe) === */
+/* === Logo icône === */
 .navbar .logo-icon {
   color: var(--corail);
   transition: all 0.3s ease;
 }
 .navbar .logo-icon:hover {
   color: var(--violet);
-  transform: rotate(10deg) scale(1.1); /* petit effet ludique au survol */
+  transform: rotate(10deg) scale(1.1);
 }
 
 /* === Texte du logo avec dégradé === */
 .navbar .logo-text {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  background: linear-gradient(to right, var(--corail), var(--violet));
-  -webkit-background-clip: text;   /* permet de remplir le texte avec le dégradé */
+  background: linear-gradient(135deg, var(--corail), var(--violet));
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: 0.5px;
   transition: transform 0.3s ease;
 }
 .navbar .logo-text:hover {
-  transform: scale(1.05);          /* léger zoom au survol */
+  transform: scale(1.05);
 }
 
 /* === Liens du menu === */
@@ -58,35 +58,53 @@
   display: inline-block;
   font-weight: 600;
   text-decoration: none;
-  color: var(--gris);              /* texte noir/gris par défaut */
+  color: var(--gris);
   padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: all 0.3s ease;
 }
 .navbar a:hover,
 .navbar a.active {
-  color: var(--corail);            /* survol = corail lumineux */
+  color: var(--corail);
   transform: scale(1.05);
 }
 
-/* === Bouton Résumé Vidéo === */
+/* === Bouton standard avec dégradé (comme Résumé Vidéo) === */
+.btn-gradient {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--corail), var(--violet));
+  color: var(--blanc) !important;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-gradient:hover {
+  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.4);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Alias pour compatibilité */
 .btn-glow {
   display: inline-block;
   padding: 0.7rem 1.5rem;
   border-radius: 30px;
-  background: linear-gradient(to right, var(--corail), var(--violet));
-  color: var(--blanc);             /* texte blanc constant */
+  background: linear-gradient(135deg, var(--corail), var(--violet));
+  color: var(--blanc) !important;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 10px rgba(255, 217, 61, 0.5);  /* effet glow doux */
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
 }
 .btn-glow:hover {
-  box-shadow: 0 0 20px var(--jaune); /* effet lumière + intense au hover */
-  transform: scale(1.05);
-  color: var(--blanc); /* ✅ garde la couleur blanche même au hover */
+  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.4);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* === Icône du menu mobile === */
@@ -99,11 +117,22 @@
 }
 
 /* ===========================
+   🌈 TITRES AVEC DÉGRADÉ
+=========================== */
+.gradient-title {
+  background: linear-gradient(135deg, var(--corail), var(--violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* ===========================
    🌈 GLOBAL STYLES
 =========================== */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fff8f9 0%, #f0f2ff 100%); /* fond clair pastel */
+  background: linear-gradient(135deg, #fff8f9 0%, #f0f2ff 100%);
   color: var(--gris);
   margin: 0;
   padding: 0;
@@ -114,7 +143,7 @@ body {
    🌓 FOOTER
 =========================== */
 footer {
-  background-color: var(--bleu-fonce); /* fond foncé */
+  background-color: var(--bleu-fonce);
   color: var(--blanc);
   text-align: center;
   padding: 2rem 1rem;
@@ -128,4 +157,35 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ===========================
+   🎴 CARTES AVEC DÉGRADÉ
+=========================== */
+.card-gradient-1 {
+  background: linear-gradient(135deg, #ff6f61 0%, #ff9068 100%);
+  color: white;
+}
+
+.card-gradient-2 {
+  background: linear-gradient(135deg, #6c63ff 0%, #9b87ff 100%);
+  color: white;
+}
+
+.card-gradient-3 {
+  background: linear-gradient(135deg, #ffd93d 0%, #ffeb85 100%);
+  color: #333;
+}
+
+/* ===========================
+   🎯 VANTA BACKGROUND
+=========================== */
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
 }

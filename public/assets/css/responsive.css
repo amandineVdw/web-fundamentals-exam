@@ -1,4 +1,7 @@
-/* responsive.css */
+/* ===========================
+   RESPONSIVE.CSS
+   Adaptations pour mobile, tablette et desktop
+=========================== */
 
 /* Mobile-first (petits écrans) */
 @media (max-width: 640px) {
@@ -14,10 +17,36 @@
     font-size: 1.5rem;
   }
 
+  h3 {
+    font-size: 1.25rem;
+  }
+
   /* Boutons plus grands pour tactile */
-  button {
+  button, .btn-gradient, .btn-glow {
     width: 100%;
     text-align: center;
+    padding: 0.9rem 1.5rem;
+  }
+
+  /* Navbar mobile */
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  /* Cartes en pleine largeur */
+  .flip-card {
+    height: 280px;
+  }
+
+  /* Timeline plus compact */
+  #timeline .relative.z-10 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Accordéon de sécurité */
+  .flip-card-inner {
+    font-size: 0.9rem;
   }
 }
 
@@ -34,6 +63,20 @@
   h2 {
     font-size: 1.75rem;
   }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Cartes flip */
+  .flip-card {
+    height: 320px;
+  }
+
+  /* Grilles adaptées */
+  .grid {
+    gap: 1.5rem;
+  }
 }
 
 /* Desktop */
@@ -48,5 +91,67 @@
 
   h2 {
     font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  /* Cartes flip */
+  .flip-card {
+    height: 300px;
+  }
+
+  /* Hover effects plus prononcés */
+  .card-hover:hover {
+    transform: translateY(-8px) rotate(2deg);
+  }
+
+  /* Navbar avec plus d'espacement */
+  .navbar a {
+    padding: 0.6rem 1.25rem;
+  }
+}
+
+/* Très grands écrans (1440px+) */
+@media (min-width: 1440px) {
+  .max-w-7xl {
+    max-width: 1400px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mode paysage mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .flip-card {
+    height: 240px;
+  }
+
+  #video-modal video {
+    max-height: 70vh;
+  }
+}
+
+/* Accessibilité : réduction des animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .floating,
+  .pulse,
+  .rotate-slow {
+    animation: none !important;
   }
 }

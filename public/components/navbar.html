@@ -1,6 +1,6 @@
 <!-- ===========================
      NAVBAR - Web Time Capsule
-     Style Glow & Good Vibes
+     Style Glow & Good Vibes - STICKY
 =========================== -->
 <nav class="navbar">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,39 +8,42 @@
       
       <!-- === LOGO SECTION === -->
       <div class="flex items-center">
-        <!-- Icône du logo (petit globe) -->
         <i data-feather="globe" class="logo-icon h-8 w-8"></i>
-        <!-- Texte du logo avec effet dégradé -->
         <span class="logo-text ml-2 text-xl">Web Time Capsule</span>
       </div>
 
       <!-- === NAVIGATION LIENS === -->
       <div class="hidden md:flex md:items-center md:space-x-4">
-        <!-- Liens de navigation classiques -->
         <a href="#timeline">Timeline</a>
-        <a href="#url">URLs</a>
-        <a href="#domains">Domains</a>
+        <a href="#url-section">URLs</a>
+        <a href="#domains">Domaines</a>
         <a href="#standards">Standards</a>
-        <a href="#security">Security</a>
-        <!-- Bouton spécial “Résumé vidéo” -->
-        <a href="#résumé-vidéo" class="btn-glow" data-video="/public/assets/video/Le_Plan_Invisible_du_Web.mp4">Résumé vidéo</a>
+        <a href="#security">Sécurité</a>
+        <!-- Bouton Résumé Vidéo avec classe standardisée -->
+        <a href="#" class="btn-gradient" id="video-btn" data-video="assets/video/Le_Plan_Invisible_du_Web.mp4">
+          📹 Résumé Vidéo
+        </a>
       </div>
-      <!-- MODALE VIDEO (à placer ici, hors navbar) -->
-      <div id="video-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 p-4">
-        <div class="bg-white rounded-lg overflow-hidden max-w-3xl w-full relative flex flex-col">
-            <button id="close-modal" class="absolute top-2 right-2 text-xl font-bold text-gray-700 hover:text-black">&times;</button>
-            <video id="modal-video" controls autoplay class="w-full h-auto max-h-[80vh]">
-                <source src="" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de vidéos.
-            </video>
-        </div>
-      </div>              <!-- === MENU MOBILE === -->
-      <!-- Visible uniquement sur petit écran -->
+
+      <!-- === MENU MOBILE === -->
       <div class="md:hidden">
-        <button type="button" class="p-2 rounded-md focus:outline-none">
-          <!-- Icône du burger (via Feather Icons) -->
+        <button type="button" class="p-2 rounded-md focus:outline-none" id="mobile-menu-btn">
           <i data-feather="menu"></i>
         </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile déroulant -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-2">
+        <a href="#timeline" class="px-4 py-2 hover:bg-white/50 rounded">Timeline</a>
+        <a href="#url-section" class="px-4 py-2 hover:bg-white/50 rounded">URLs</a>
+        <a href="#domains" class="px-4 py-2 hover:bg-white/50 rounded">Domaines</a>
+        <a href="#standards" class="px-4 py-2 hover:bg-white/50 rounded">Standards</a>
+        <a href="#security" class="px-4 py-2 hover:bg-white/50 rounded">Sécurité</a>
+        <a href="#" class="btn-gradient mx-4 text-center" id="video-btn-mobile" data-video="assets/video/Le_Plan_Invisible_du_Web.mp4">
+          📹 Résumé Vidéo
+        </a>
       </div>
     </div>
   </div>

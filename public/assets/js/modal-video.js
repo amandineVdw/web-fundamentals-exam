@@ -1,28 +1,82 @@
-// Sélection du bouton "Résumé vidéo" et de la modale
-const videoBtn = document.querySelector('.btn-glow');
-const modal = document.getElementById('video-modal');
-const modalVideo = document.getElementById('modal-video');
-const closeModalBtn = document.getElementById('close-modal');
+// modal-video.js - Gestion de la modale vidéo
 
-if(videoBtn && modal && modalVideo && closeModalBtn){
-  videoBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // empêche le comportement du lien
-    const videoSrc = videoBtn.getAttribute('data-video'); // récupère le lien de la vidéo
-    modalVideo.querySelector('source').src = videoSrc;
-    modalVideo.load(); // recharge la vidéo
-    modal.classList.remove('opacity-0', 'pointer-events-none'); // affiche la modale
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const modal = document.getElementById('video-modal');
+  const modalVideo = document.getElementById('modal-video');
+  const closeBtn = document.getElementById('close-modal');
+  
+  // Boutons pour ouvrir la vidéo (desktop et mobile)
+  const videoBtn = document.getElementById('video-btn');
+  const videoBtnMobile = document.getElementById('video-btn-mobile');
 
-  closeModalBtn.addEventListener('click', () => {
-    modal.classList.add('opacity-0', 'pointer-events-none'); // masque la modale
-    modalVideo.pause(); // stop la vidéo
-  });
+  // Fonction pour ouvrir la modale
+  function openModal(e) {
+    e.preventDefault();
+    const videoSrc = e.currentTarget.getAttribute('data-video');
+    
+    console.log('🎬 Tentative d\'ouverture vidéo:', videoSrc);
+    
+    if (videoSrc && modal && modalVideo) {
+      const source = modalVideo.querySelector('source');
+      source.src = videoSrc;
+      modalVideo.load();
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      
+      // Empêcher le scroll du body
+      document.body.style.overflow = 'hidden';
+      
+      console.log('✅ Modal vidéo ouverte !');
+    } else {
+      console.error('❌ Erreur: éléments manquants', {
+        videoSrc,
+        modal: !!modal,
+        modalVideo: !!modalVideo
+      });
+    }
+  }
 
-  // Fermeture si clic en dehors du contenu vidéo
-  modal.addEventListener('click', (e) => {
-    if(e.target === modal){
+  // Fonction pour fermer la modale
+  function closeModal() {
+    if (modal && modalVideo) {
+      modal.classList.remove('opacity-100');
       modal.classList.add('opacity-0', 'pointer-events-none');
       modalVideo.pause();
+      modalVideo.currentTime = 0;
+      
+      // Réactiver le scroll du body
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  // Event listeners
+  if (videoBtn) {
+    videoBtn.addEventListener('click', openModal);
+  }
+
+  if (videoBtnMobile) {
+    videoBtnMobile.addEventListener('click', openModal);
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  // Fermer si clic en dehors du contenu
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  // Fermer avec la touche Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('pointer-events-none')) {
+      closeModal();
     }
   });
-}
+
+});
