@@ -17,14 +17,15 @@
    🧭 NAVBAR STICKY & GLOW
 =========================== */
 .navbar {
-  background: var(--fond);
-  position: sticky;
+  background: var(--fond);                       /* fond semi-transparent */
+  position: sticky;                              /* reste collée en haut */
   top: 0;
   width: 100%;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 0.5rem 0;
+  z-index: 1000;                                 /* toujours au-dessus du contenu */
+  backdrop-filter: blur(10px);                   /* effet flou type "verre dépoli" */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);       /* ombre douce */
+  padding: 0.5rem 0;                             /* espace vertical */
+  transition: all 0.3s ease; /* ✅ Ajout de la transition */
 }
 
 /* === Logo icône === */
